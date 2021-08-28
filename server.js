@@ -10,7 +10,6 @@ const CLIENT_ID = '259909236756-1638u3a972nrhdncl9bqs44op1nfrpfc.apps.googleuser
 const client = new OAuth2Client(CLIENT_ID);
 
 
-const PORT = 7000;
 
 // Middleware
 
@@ -92,6 +91,6 @@ function checkAuthenticated(req, res, next){
 }
 
 
-app.listen(PORT, ()=>{
-    console.log(`Server running on port ${PORT}`);
+app.listen(process.env.PORT || 7000, ()=>{
+    console.log(`Server running on port `);
 })
