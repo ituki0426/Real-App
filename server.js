@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser')
 
 // Google Auth
 const {OAuth2Client} = require('google-auth-library');
-const CLIENT_ID = '259909236756-1638u3a972nrhdncl9bqs44op1nfrpfc.apps.googleusercontent.com'
+const CLIENT_ID = '259909236756-7bflqorfiikkc5l2339upic1romn0spq.apps.googleusercontent.com'
 const client = new OAuth2Client(CLIENT_ID);
 
 
@@ -17,9 +17,6 @@ app.set('view engine', 'ejs');
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public'));
-app.get("/react",(req,res)=>{
-    res.render("react")
-})
 app.get('/', (req, res)=>{
     res.render('index')
 })
@@ -89,13 +86,7 @@ function checkAuthenticated(req, res, next){
       })
 
 }
-app.get("/custome",(req,res)=>{
-    if(use.email == "yuzurihainori0426@gmail.com"){
-        res.render("/custom");
-    }else{
-        res.render("login");
-    }
-})
+
 app.listen(process.env.PORT || 7000, ()=>{
     console.log(`Server running on port `);
 })
