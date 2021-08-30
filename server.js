@@ -89,8 +89,13 @@ function checkAuthenticated(req, res, next){
       })
 
 }
-
-
+app.get("/custome",(req,res)=>{
+    if(use.email == "yuzurihainori0426@gmail.com"){
+        res.render("/custom");
+    }else{
+        res.render("login");
+    }
+})
 app.listen(process.env.PORT || 7000, ()=>{
     console.log(`Server running on port `);
 })
